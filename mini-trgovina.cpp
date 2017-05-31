@@ -59,14 +59,33 @@ int main()
                     break;
                 }
             }
-            if( pronadjen=false )
+            if( pronadjen==false )
             {
-                cout << "Artikl nije pronaden" << endl;
+                cout << "Barkod nije pronaden" << endl;
             }
         }
 
         else if( izbor == 4 )
         {
+            string  artikli_pretraga;
+            cout << "Upisite artikl po kojem zelite saznati podatke;  ";
+            cin.ignore();
+            getline(cin, artikli_pretraga );
+
+            bool pronadjen = false;
+            for ( int i = 0; i < brojArtikla; i ++)
+            {
+                if(artikli_pretraga == artikli[i] )
+                {
+                    pronadjen=true;
+                    cout << barkod[i] << "\t"<< artikli[i] << "\t"<< cijena[i] << endl;
+                    break;
+                }
+            }
+            if(pronadjen==false)
+            {
+                cout << "Artikl nije pronaden " << endl;
+            }
         }
         else if( izbor == 5 )
         {

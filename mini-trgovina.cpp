@@ -41,12 +41,30 @@ int main()
             cout << "bar kod" << "\t" << "naziv artikla" << "\t" << "cijena" << endl;
             for( int i = 0; i < brojArtikla; i++ )
             {
-                cout << artikli[i] << "\t"<< barkod[i] << "\t"<< cijena[i] << endl;
+                cout << barkod[i] << "\t"<< artikli[i] << "\t"<< cijena[i] << endl;
             }
         }
         else if( izbor == 3 )
         {
+            unsigned long long int barkod_pretraga;
+            cout << "Upisite barkod po kojem zelite naci artikl: ";
+            cin >> barkod_pretraga;
+            bool pronadjen = false;
+            for (int i = 0; i < brojArtikla; i ++)
+            {
+                if(barkod_pretraga== barkod[i])
+                {
+                    pronadjen=true;
+                    cout << barkod[i] << "\t"<< artikli[i] << "\t"<< cijena[i] << endl;
+                    break;
+                }
+            }
+            if( pronadjen=false )
+            {
+                cout << "Artikl nije pronaden" << endl;
+            }
         }
+
         else if( izbor == 4 )
         {
         }
